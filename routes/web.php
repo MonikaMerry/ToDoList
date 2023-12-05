@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TodoController::class, 'viewPage']);
+
+Route::post('todo-list', [TodoController::class, 'todoList']);
+
+Route::get('delete-todo/{id}', [TodoController::class, 'deleteTodo']);
