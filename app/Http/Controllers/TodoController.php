@@ -14,7 +14,9 @@ class TodoController extends Controller
     public function viewPage()
     {
         $list = Tododatas::get();
-        return view('welcome', compact('list'));
+        // return $list;
+        // return  compact('list');
+        return view('welcome',compact('list'));
     }
 
     //save
